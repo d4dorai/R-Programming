@@ -30,7 +30,7 @@ mean_sample #sample mean
 
 
 
-2. Show how variable it is and compare it to the theoretical variance of the distribution.
+Q2. Show how variable it is and compare it to the theoretical variance of the distribution.
 
 ```{r}
 variance_sample <- var(v)
@@ -38,7 +38,7 @@ variance_sample #sample variance
 (1/lambda)^2/nrsim  #real distribution variance
 ```
 
-3. Show that the distribution is approximately normal.
+Q3. Show that the distribution is approximately normal.
 
 ```{r}
 v_normal <- rnorm(1000, mean = 1/lambda, sd = sqrt((1/lambda)^2/nrsim) )
@@ -53,7 +53,7 @@ g
 ```
 The central limit theorem states that given a population with a finite mean mu and a finite non-zero variance sigma2, the sampling distribution of the mean approaches a normal distribution with a mean of mu and a variance of sigma2/N as N, the sample size, increases.
 
-4. Evaluate the coverage of the confidence interval for 1/lambda.
+Q4. Evaluate the coverage of the confidence interval for 1/lambda.
 
 ```{r}
 ci_1lambda <- mean_sample +c(-1, 1)* qt(0.975,nrsim-1)* sd(v)/sqrt(nrsim)
